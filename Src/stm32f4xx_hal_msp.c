@@ -157,7 +157,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 #endif
 
 
-  if (huart->Instance == USART2)
+  if (huart == &huart2)
   {
     /** PA2 as tx / PA3 as rx **/
     __HAL_RCC_GPIOA_CLK_ENABLE();

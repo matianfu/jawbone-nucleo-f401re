@@ -38,6 +38,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "wave_audio.h"
 
 /** @addtogroup STM32F4xx_HAL_Examples
   * @{
@@ -87,11 +88,10 @@ int main(void)
   printf("UART Printf Example: retarget the C library printf function to the UART\r\n");
 
   /* Infinite loop */ 
-  while (1)
-  {
-    uart_hl_print();
-    HAL_Delay(200);
-  }
+
+  WaveRecorderProcess();
+
+  return 0;
 }
 
 /**

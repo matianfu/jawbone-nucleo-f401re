@@ -38,6 +38,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f401_discovery_audio.h"
 #include "main.h"
 #include "stm32f4xx_it.h"    
 
@@ -180,6 +181,13 @@ void DMA1_Stream5_IRQHandler(void)
 }
 
 
+extern I2S_HandleTypeDef                 hAudioInI2s;
+
+/* audio in */
+void I2S2_IRQHandler(void)
+{
+  HAL_DMA_IRQHandler(hAudioInI2s.hdmarx);
+}
 
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */
